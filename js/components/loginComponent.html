@@ -2,7 +2,7 @@
     <form class="form-signin">
         <h2 class="form-signin-heading">Please sign in</h2>
         <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="" ng-model="$ctrl.user.username">
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="" ng-model="$ctrl.user.email">
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="" ng-model="$ctrl.user.password">
         <div class="checkbox">
@@ -10,7 +10,7 @@
                 <input type="checkbox" value="remember-me"> Remember me
             </label>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" ng-click="$ctrl.signIn(user)">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" ng-click="$ctrl.signIn($ctrl.user)">Sign in</button>
     	<div class="row">
     		<div class="col-xs-12">
     			<div class="col-xs-6"><a href="">New User?</a></div>
