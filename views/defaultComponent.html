@@ -1,0 +1,18 @@
+<div>
+    <p>Available products</p>
+    <div>
+        <ul ng-repeat="prod in $ctrl.products">
+            <li>{{prod.name}}</li>
+
+        </ul>
+    </div>
+</div>
+<div>
+    <p>Discounts this week</p>
+    <div>
+        <ul ng-repeat="disc in $ctrl.discounts">
+            <li>{{disc.category}}</li>
+            <li>{{disc.discount}}</li>
+        </ul>
+    </div>
+</div>

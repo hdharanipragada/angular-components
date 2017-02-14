@@ -8,10 +8,14 @@
       brand:'<'
      },
     // Load the template
-    templateUrl: '/js/components/dashboardComponent.html',
-    controller: function () {
+    templateUrl: '../views/dashboardComponent.html',
+    controller: function (ProductService) {
     // A list of menus
-    this.msg = "Loading...";
+    ProductService.getList().then(function(response) {
+                console.log(response);
+            }, function(error) {
+                console.log(error);
+            });
     }
   });
 })();

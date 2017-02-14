@@ -8,7 +8,7 @@
       brand:'<'
      },
     // Load the template
-    templateUrl: '/js/components/footerComponent.html',
+    templateUrl: '../views/footerComponent.html',
     controller: function () {
     // A list of menus
       this.message = "Copy rights";

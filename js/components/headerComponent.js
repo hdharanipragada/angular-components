@@ -1,26 +1,29 @@
-(function(){
-  'use strict';
-  var app = angular.module('app');
+(function() {
+    'use strict';
+    var app = angular.module('app');
 
-  app.component('header', {
-    // defines a two way binding in and out of the component
-    bindings: {
-      brand:'<'
-     },
-    // Load the template
-    templateUrl: '/js/components/headerComponent.html',
-    controller: function () {
-    // A list of menus
-      this.menu = [{
-        name: "Home",
-        component: "home"
-      }, {
-        name: "About",
-        component: "about"
-      }, {
-        name: "Contact",
-        component: "contact"
-      }];
-    }
-  });
+    app.component('header', {
+        // Load the template
+        templateUrl: '../views/headerComponent.html',
+        controller: function($state, LoginService, SearchService) {
+            var ctrl = this;
+            ctrl.username = LoginService.showUser();
+            ctrl.logOut = function(name) {
+                LoginService.setUser("");
+                $state.go('login');
+            }
+            ctrl.fetchSearch = function(searchItem) {
+                if(searchItem!==""){
+                    SearchService.getList(searchItem).then(function(response) {
+                    console.log(response);
+                }, function(error) {
+                    console.log(error);
+                });
+                }
+               
+
+            }
+
+        }
+    });
 })();

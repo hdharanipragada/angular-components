@@ -2,18 +2,19 @@
     'use strict';
     var app = angular.module('app');
     app.component('login', {
-        templateUrl: '/js/components/loginComponent.html',
+        templateUrl: '../views/loginComponent.html',
         controller: function($state, LoginService) {
             var ctrl = this;
             ctrl.user = {};
             ctrl.signIn = function(user) {
                 LoginService.authenticateUser(user).then(function successCallback(oResponse) {
-                    console.log(oResponse);
+                    LoginService.setUser(oResponse.data.uname);
                     $state.go('dashboard');
-                }, function errorCallback(oResponse) {
+                }, function errorCallback(error) {
                     console.log("operation failed");
-                    return oResponse.data;
+                    return error;
                 });
+
             }
         }
     })

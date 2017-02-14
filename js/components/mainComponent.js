@@ -8,7 +8,7 @@
       brand:'<'
      },
     // Load the template
-    templateUrl: '/js/components/mainComponent.html',
+    templateUrl: '../views/mainComponent.html',
     controller: function () {
     // A list of menus
       this.menu ="Here";

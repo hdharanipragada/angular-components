@@ -1,3 +1,3 @@
 angular.module('app').constant("myConfig", {
-        "url": "http://localhost:9000/"
+        "url": "http://serve-angcomp.rhcloud.com/"
     })
