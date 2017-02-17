@@ -9,13 +9,17 @@
      },
     // Load the template
     templateUrl: '../views/dashboardComponent.html',
-    controller: function (ProductService) {
-    // A list of menus
-    ProductService.getList().then(function(response) {
-                console.log(response);
+    controller: function (SearchService) {
+             var ctrl=this;
+            SearchService.getList().then(function(response) {
+                ctrl.frequentlyOrdered = response.data;
             }, function(error) {
                 console.log(error);
             });
+            
+          ctrl.loadCurrentItem = function(index){
+            var requested = ctrl.frequentlyOrdered[index];
+          }
     }
   });
 })();

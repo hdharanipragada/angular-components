@@ -1,7 +1,7 @@
 angular.module('app')
     .service('LoginService', ['$http', function($http, ajaxServiceManager, myConfig) {
 
-        var connection = "http://serve-angcomp.rhcloud.com/";
+        var connection = "http://localhost:9000/";
 
         this.username = "";
 
